@@ -1,0 +1,7 @@
+def repeatedString(s, n):
+    l = len(s)
+    clean = int(n/l)*s.count('a')
+    dirty = s[:(n%l)].count('a')
+
+    return clean+dirty
+   
