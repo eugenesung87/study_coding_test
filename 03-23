@@ -1,7 +1,28 @@
+# 1. Repeated String
+
 def repeatedString(s, n):
     l = len(s)
     clean = int(n/l)*s.count('a')
     dirty = s[:(n%l)].count('a')
-
     return clean+dirty
-   
+
+# 2. 2D Array - DS
+
+def hourglassSum(arr):
+    sums = []
+    
+    for i in range(len(arr)-2):
+        for j in range(len(arr)-2):
+            sum = arr[i][j] + arr[i][j+1] + arr[i][j+2] + arr[i+1][j+1] + arr[i+2][j] + arr[i+2][j+1] + arr[i+2][j+2]
+            sums.append(sum)
+    return max(sums)
+    
+# 3. Arrays: Left Rotation
+
+def rotLeft(a, d):
+    l = len(a)-d%len(a)
+    ans = []
+    for idx in range(len(a)):
+        ans.append(a[idx-l])
+    return ans
+
